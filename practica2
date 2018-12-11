@@ -14,7 +14,7 @@ struct item{
 	int Cantidad;
 	char Tipo[MAX_CAD];
 };
-
+struct
 int insertarItem(struct item mochila[], int capacidad_max, struct item nuevo);
 void mostrarMochila(struct item mochila[], int capacidad_max);
 int usarItem(struct item mochila[], int capacidad_max, char nombre[]);
