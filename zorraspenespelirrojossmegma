@@ -1,0 +1,119 @@
+/* Alejandro Gabriel Ramiro Sechi - Jesús Buenavida*/
+
+#include <stdio.h> //Definiciones de las macros, constantes y declaraciones de funciones de la biblioteca Standard de programacion C.
+#include <math.h> //Contiene muchas funciones matematicas.
+#include <inttypes.h> //Contiene numeros mas grandes
+#include <stdlib.h> //Para usar comandos del sistema host
+#include <time.h> //Para generar nÃºmeros aleatorios necesitamos saber el tiempo
+
+#define MAX_CAD 100
+
+struct item{
+	char Nombre[MAX_CAD];
+	char Descripcion[MAX_CAD];
+	int Cantidad;
+	char Tipo[MAX_CAD];
+};
+
+int insertarItem(struct item mochila[], int capacidad_max, struct item nuevo);
+void mostrarMochila(struct item mochila[], int capacidad_max);
+int usarItem(struct item mochila[], int capacidad_max, char nombre[]);
+
+
+int main () { //Funcion principal
+    int opcion;
+    int salir = 0;
+    	struct item nuevo={
+		"?",
+		"?",
+		"?",
+		"?",
+	};
+    while (salir == 0) {
+				system("cls");
+	printf("================================================================================\n");
+	printf("\t\t\t INTERACCIÓN CON MOCHILA \n");
+	printf("================================================================================\n");
+	printf("\t 1| Guardar item en mochila\n");
+	printf("\t 2| Mostrar contenido Mochila\n");
+	printf("\t 3| Usar Item\n");
+	printf("\t 4| Salir\n");
+	printf("================================================================================");
+	printf("\nseleccione el programa pulsando el numero correspondiente:\n");
+	printf("================================================================================");
+        scanf("%d",&opcion);
+        switch (opcion) {
+            case 1:
+                insertarItem(mochila,capacida_max,nuevo);
+                system("PAUSE");
+                system("cls");
+                break;
+            case 2:
+                mostrarMochila(mochila,capacidad_max);
+                system("PAUSE");
+                system("cls");
+                break;
+            case 3:
+                usarItem(mochila,capacidad_max,nombre);
+                system("PAUSE");
+                system("cls");
+                break;
+
+            case 4:
+                salir = 1;
+                printf("\nGracias por usar el programa\n");
+                break;
+            default:
+                printf("\nLa opcion %d no es correcta.\nPor favor vuelva a intentarlo con un numero del 1 al 4.",opcion);
+                system("PAUSE");
+        }
+    }
+    return 0;
+}
+
+int insertarItem(struct item mochila[], int capacidad_max, struct item nuevo){
+    int j=0;
+    if(j>99){
+		printf("\nNo hay espacio en la mochila\n");     //escribe esto por pantalla cuando se pasa de 100 contactos en la agenda
+	}
+
+	else{
+		printf("\n Solo hay capacidad para 100 objetos\n");   //te pide que vayas escribiendo los datos del nuevo contactos para luego guardarlos en la agneda
+		printf("\n Introduce nombre:\t");
+		scanf("%s", mochila[j].nombre);
+		printf("\n Introducir Descripción:\t");
+		scanf("%s", mochila[j].descripcion);
+		printf("\n Introducir tipo [WEAREABLE/USABLE]:\t");
+		scanf("%s", mochila[j].tipo);
+            if
+		printf("\nEl Item ha sido guardado!!!!!\n");
+	}
+
+
+}
+
+void mostrarMochila(struct item mochila[], int capacidad_max){
+        printf("#HUECO    Nombre                    Descripción                                     Cantidad        TIPO");
+        printf("========================================================================================================");
+        printf("%d\t%-30s%-40s\t%8d\t%s",hueco,nombre,descripcion,catidad,tipo);
+
+}
+
+int usarItem(struct item mochila[], int capacidad_max, char nombre[]){
+    int i=0;
+	printf("Introduzca el objeto a usar:\n");   //introduces el nombre del contacto a borrar
+	scanf("%s", nombre);
+
+	for(j=0; j<capacidad; j++){                                        //bucle con el que se recorrerá toda la agenda
+
+		if(strcmp(nombre, mochila[j].nombre)==0){                       //comparamos el nombre introducido con todos los nombres de la agenda
+			strcpy(mochila[j].nombre, "?");                             //copia el símbolo ? en el lugar del struct del contacto que se desea borrar
+			strcpy(mochila[j].descripcion, "?");
+			strcpy(mochila[j].tipo, "?");
+
+	}
+}
+}
+
+
+}
